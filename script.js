@@ -1,11 +1,17 @@
-document.addEventListener('scroll', function() {
-    const imageContainer = document.querySelector('.image-container');
-    const rect = imageContainer.getBoundingClientRect();
-    const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
+document.addEventListener('DOMContentLoaded', function() {
+    const sections = document.querySelectorAll('section');
 
-    if (isVisible) {
-        imageContainer.style.opacity = 1;
-    } else {
-        imageContainer.style.opacity = 0;
-    }
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
 });
