@@ -39,3 +39,48 @@ body, html {
         transform: translateY(-20px);
     }
 }
+
+/* NEXT is for materialising ariel.png */
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f9;
+}
+
+.greeting {
+    font-size: 2em;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: appear 2s ease-out forwards;
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.image-container {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    margin-top: 50px;
+}
+
+.image-container img {
+    width: 300px; /* Adjust size as needed */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
