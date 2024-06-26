@@ -1,86 +1,67 @@
-<link rel="stylesheet" href="styles.css">
-
-
 body, html {
-    height: 100%;
     margin: 0;
-    font-family: Arial, sans-serif;
+    padding: 0;
+    font-family: 'Times New Roman', serif;
+    background-color: #121212;
+    color: #ffffff;
+    scroll-behavior: smooth;
+}
+
+header {
+    background-color: #1a1a1a;
+    padding: 1em 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
-    background-color: #f4f4f9;
+    gap: 20px;
 }
 
-.greeting {
-    font-size: 2em;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    animation: appear 2s ease-out forwards, move 5s infinite;
+nav ul li {
+    display: inline;
 }
 
-@keyframes appear {
-    0% {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 5px 10px;
 }
 
-@keyframes move {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-20px);
-    }
+section {
+    padding: 2em;
+    text-align: center;
 }
 
-/* NEXT is for materialising ariel.png */
-
-body, html {
-    height: 100%;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #f4f4f9;
+section h2 {
+    margin-top: 0;
+    font-size: 1.5em;
 }
 
-.greeting {
-    font-size: 2em;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    animation: appear 2s ease-out forwards;
+#skills ul {
+    list-style: none;
+    padding: 0;
 }
 
-@keyframes appear {
-    0% {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+#skills ul li {
+    margin-bottom: 0.5em;
 }
 
-.image-container {
+section {
     opacity: 0;
-    transition: opacity 1s ease-in-out;
-    margin-top: 50px;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
-.image-container img {
-    width: 300px; /* Adjust size as needed */
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
